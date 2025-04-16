@@ -18,6 +18,8 @@ def find_port():
 if __name__ == "__main__":
     port_name = find_port()
     if port_name is None:
+        print("No port found")
+        print("Trying to open the port")
         port_name = find_port()
 
     print("Opening port: " + port_name)
