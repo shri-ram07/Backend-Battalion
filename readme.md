@@ -68,17 +68,17 @@ We propose an **Automated power Monitoring System** that leverages **real-time c
 
 - UI 1
 
-![img_2.png](Assets/11.png)
+![Assets/11.png](Assets/11.png)
 
 
 UI 2
 
-![img_3.png](Assets/22.png)
+![Assets/22.png](Assets/22.png)
 
 
 UI 3
 
-![img_4.png](Assets/33.png)
+![Assets/33.png](Assets/33.png)
 
 
 ## 📈 Scalability
