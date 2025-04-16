@@ -140,11 +140,11 @@ smart-room-monitoring/
 
 ## 👨‍💻 Team Backend Battalion
 
-| Name                  | Role                                |
-|-----------------------|-------------------------------------|
+| Name                   | Role                                |
+|------------------------|-------------------------------------|
 | 🧠 Shri Ram Dwivedi    | AI Model Integration               |
-| ⚡ Amaya Kumar Sahu    | Arduino & Hardware Logic           |
-| 💻 Surya K. Srivastave| PyQt Interface & Integration       |
+| ⚡ Amaya Kumar Sahu     | Arduino & Hardware Logic           |
+| 💻 Surya K. Srivastava | PyQt Interface & Integration       |
 | 🎨 Ananya Shahi        | UI/UX Design + Documentation       |
 
 
