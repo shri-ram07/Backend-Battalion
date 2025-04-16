@@ -88,13 +88,13 @@ We propose an **Automated power Monitoring System** that leverages **real-time c
 
 ## 🔌 Circuit Diagram
 
-![img_1.png](img_1.png)
+![img_1.png](Assets/1.jpg)
 
 ---
 
 ## 🧠 System Interface
 
-![img.png](img.png)
+![Assets/2.jpg](Assets/2.jpg)
 
 ---
 

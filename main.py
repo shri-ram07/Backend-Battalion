@@ -1,5 +1,4 @@
 from UI import *
-import cv2
 from PyQt5.QtWidgets import QApplication
 import sys
 
