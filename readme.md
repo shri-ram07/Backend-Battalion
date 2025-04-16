@@ -1,4 +1,5 @@
 
+
 # 🔌 Automated Power Monitoring System  
 ### 🚀 Developed by Team Backend Battalion
 
@@ -58,6 +59,28 @@ We propose an **Automated power Monitoring System** that leverages **real-time c
 
 ---
 
+
+
+
+
+### 📸GUI 
+
+
+- UI 1
+
+![img_2.png](Assets/11.png)
+
+
+UI 2
+
+![img_3.png](Assets/22.png)
+
+
+UI 3
+
+![img_4.png](Assets/33.png)
+
+
 ## 📈 Scalability
 
 - 🏠 Homes
@@ -115,14 +138,16 @@ smart-room-monitoring/
 
 ```
 
+## 👨‍💻 Team Backend Battalion
 
-## 🧑‍💻 Contributors - Backend Battalion
-
-- 🧠 **AI Development**: Shri Ram Dwivedi  
-- ⚡ **Hardware Integration**: Amaya Kumar Sahu  
-- 💻 **UI/UX & Software**: Surya Kumar Srivastave, Ananya Shahi
-
+| Name                  | Role                                |
+|-----------------------|-------------------------------------|
+| 🧠 Shri Ram Dwivedi    | AI Model Integration               |
+| ⚡ Amaya Kumar Sahu    | Arduino & Hardware Logic           |
+| 💻 Surya K. Srivastave| PyQt Interface & Integration       |
+| 🎨 Ananya Shahi        | UI/UX Design + Documentation       |
 
 
 > 🌱 *Join us in revolutionizing how we consume energy—one smart room at a time.*
 
+---
