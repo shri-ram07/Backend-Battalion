@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 from pyfirmata import Arduino
 from Automatic_com_port_Detection import find_port
-
+from dela_y import delay
 import time
 
 
@@ -480,7 +480,12 @@ class MainWindow(QMainWindow):
         # Control appliances based on mode
         if automatic_mode:
             for i in range(4):
-                new_state = 0 if i in nearest_points else 1
+                if i in nearest_points:
+                    new_state = 0
+                else:
+                    delay(15000)
+                    new_state = 1
+
                 pins[i].write(new_state)
 
                 # Update appliance state and calculate ON duration

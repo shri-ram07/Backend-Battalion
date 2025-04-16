@@ -35,7 +35,6 @@ corner_points = [
 
 # Open video capture
 cap = cv2.VideoCapture(0)
-print(int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 while cap.isOpened():
     _, image = cap.read()
     if not _:
