@@ -7,7 +7,7 @@ def find_port():
                 with open(f"\\\\.\\{port_name}", "r+b") as port:
                     return port_name
             except OSError:
-                print("An Unexpected error occurred while trying to open the port")
+                print("Please Wait !")
                 pass
     else:
         print("Unsupported OS ! .")
