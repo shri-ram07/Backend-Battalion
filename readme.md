@@ -1,113 +1,129 @@
 
-# 🔌 Automated Power Monitoring System  – Backend Battalion
-
-## 📌 Problem Statement
-
-Energy wastage is a common problem in households and offices, primarily caused by unattended appliances running in unoccupied rooms. Manual appliance control is inconvenient and often neglected, and the absence of real-time monitoring leads to inefficiencies. This results in higher electricity bills and environmental harm.
-
-> 💡 **Key Insight**: Current systems lack automation and real-time feedback, making energy usage inefficient and unsustainable.
+# 🔌 Automated Power Monitoring System  
+### 🚀 Developed by Team Backend Battalion
 
 ---
 
-## 🚀 Proposed Solution
+## 📍 Problem Statement
 
-We present a **Automated Power Monitoring System** that automates appliance control using real-time computer vision and IoT hardware. The system utilizes **YOLOv3** for detecting the presence of people and automatically turns on/off appliances (lights, fans, etc.) via an **Arduino**.
+Energy inefficiency due to unattended electrical appliances in unoccupied rooms remains a significant issue in both residential and commercial environments. Manual monitoring and control of these appliances are often impractical, leading to excessive electricity consumption and increased carbon footprint.
 
-### ✅ Key Features
-
-- 👁️‍🗨️ Real-time automated monitoring with a webcam
-- ⚙️ Automatic and Manual operation modes
-- 🧠 YOLOv3-based people detection
-- 🔌 Appliance control via Arduino and relays
-- 📊 Electricity savings and live stats display
-- 🔌 Auto-detects COM ports
-- 🔲 Flexible room area setup using customizable corner points
+> 💡 **Insight**: Existing solutions are either manual or lack real-time feedback and intelligent automation.
 
 ---
 
-## 🧰 Tech Stack
+## 🌟 Our Solution
 
-| Component      | Technology Used      |
-| -------------- | -------------------- |
-| 🧠 AI Model    | YOLOv3 (Real-time Object Detection) |
-| 🎥 Video Processing | OpenCV |
-| 🖥️ GUI         | PyQt (Desktop Interface) |
-| 🤖 Hardware Control | PyFirmata + Arduino UNO + Relays |
-| 💻 Hardware     | Webcam, Arduino, Electrical Relays |
+We propose an **Automated power Monitoring System** that leverages **real-time computer vision** and **IoT integration** to automate appliance control. Using a webcam, the system detects human presence through **YOLOv3**, communicating with an **Arduino** to intelligently manage appliances.
 
 ---
 
-## ⚡ Impact & Benefits
+## 🔧 Features at a Glance
 
-### 🌍 Environmental Impact
-
-- Reduces unnecessary energy usage
-- Contributes to SDG 7 (Affordable and Clean Energy)
-
-### 💸 Economic Impact
-
-- Cuts down electricity bills
-- Supports SDG 12 (Responsible Consumption and Production)
-
-### 🧑‍🤝‍🧑 Social Benefits
-
-- Increases user convenience
-- Promotes automation in everyday life
-- Supports SDG 9 (Industry, Innovation, and Infrastructure)
-
-### 📈 Scalability
-
-- Adaptable to homes, offices, schools, and commercial spaces
+- 👁️‍🗨️ Real-time people detection using YOLOv3
+- 🖥️ Interactive GUI with PyQt for control & monitoring
+- ⚙️ Dual operation modes – Manual & Automatic
+- 🔌 Smart appliance control via Arduino + Relays
+- 📊 Live electricity usage stats and savings tracker
+- 🔍 Auto-detection of serial COM ports
+- 🖼️ Customizable room layout for area mapping
 
 ---
 
-## 🔮 Future Enhancements
+## 🧠 Tech Stack
 
-- ☁️ Cloud-based data monitoring and analytics
-- 📱 Mobile app support for remote control
-- 🌡️ Sensor integration (temperature, humidity)
-- 🧠 Improved AI models for better accuracy
-
----
-
-## 🧪 How It Works
-
-1. Webcam captures live feed
-2. YOLOv3 processes frames to detect humans
-3. PyQt GUI shows real-time stats and modes
-4. Arduino receives signals via PyFirmata
-5. Appliances are automatically controlled based on occupancy
+| Layer             | Technology                          |
+|------------------|--------------------------------------|
+| 🧠 AI Engine      | YOLOv3 (Real-time Object Detection)  |
+| 🎥 Image Capture  | OpenCV                              |
+| 🖥️ Interface      | PyQt (Desktop GUI)                   |
+| 🔌 Hardware Control | PyFirmata + Arduino UNO + Relays    |
+| 📹 Devices         | Webcam, Electrical Relays            |
 
 ---
 
+## 🌍 Impact
+
+### 🔋 Environmental
+- Reduces power wastage
+- Supports **SDG 7**: Affordable & Clean Energy
+
+### 💰 Economic
+- Cuts electricity costs
+- Aligns with **SDG 12**: Responsible Consumption
+
+### 👥 Social
+- Promotes smart living and convenience
+- Encourages sustainable innovation (**SDG 9**)
+
+---
+
+## 📈 Scalability
+
+- 🏠 Homes
+- 🏢 Offices
+- 🏫 Schools
+- 🛍️ Commercial Complexes
+
+---
+
+## 🔮 Future Scope
+
+- ☁️ Cloud-based dashboard for remote analytics
+- 📱 Mobile app for appliance control
+- 🌡️ Advanced sensors: temperature, humidity, etc.
+- 🧠 Enhanced AI with multi-person detection & behavior analysis
+
+---
+
+## ⚙️ System Workflow
+
+1. Webcam captures real-time video
+2. YOLOv3 identifies human presence in frames
+3. GUI updates status and control options
+4. Signals are transmitted to Arduino via PyFirmata
+5. Appliances are switched on/off accordingly
+
+---
+
+## 🔌 Circuit Diagram
+
+![img_1.png](img_1.png)
+
+---
+
+## 🧠 System Interface
 
 ![img.png](img.png)
 
+---
 
-## 📁 Project Structure
+## 📁 Project Directory
 
 ```
 smart-room-monitoring/
-├──                  
-├──                  
-├──               
-├── 
-├── 
-└── README.md
-```
+├── .gitattributes
+├── Automatic_com_port_Detection.py      # Arduino port detection
+├── Raw_Code.py                          # Testing file
+├── UI.py                                # UI interface
+├── coco.names                           # YOLO class labels
+├── ele_consumption_cal.py               # Electricity consumption calculator
+├── main.py                              # Binder / integration script
+├── readme.md                            # Project readme
+├── yolov3.cfg                           # YOLOv3 config
+└── yolov3.weights                       # YOLOv3 weights
+
 
 ---
 
-## 🎯 Conclusion
+## 🧑‍💻 Contributors - Backend Battalion
 
-The Smart Room Monitoring System showcases how the integration of AI and IoT can solve real-world challenges. It brings sustainability, efficiency, and innovation together — one smart room at a time.
-
-> 🌱 **Join us in building smarter, greener spaces.**
+- 🧠 **AI Development**: Shri Ram Dwivedi  
+- ⚡ **Hardware Integration**: Amaya Kumar Sahu  
+- 💻 **UI/UX & Software**: Surya Kumar Srivastave, Ananya Shahi
 
 ---
 
-## 🤝 Team - Backend Battalion
+> 🌱 *Join us in revolutionizing how we consume energy—one smart room at a time.*
 
-- 🧠 Ideation & AI: [Shri Ram Dwivedi]
-- 💡 Hardware & Integration: [Amaya Kumar Sahu]
-- 💻 UI/UX & Software: [Surya Kumar Srivastave & Ananya Shahi]
+---
