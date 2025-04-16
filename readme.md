@@ -1,104 +1,113 @@
 
-# ️Automated Power Monitoring System
+# 🔌 Automated Power Monitoring System  – Backend Battalion
 
-This project combines real-time computer vision with Arduino-based hardware control to automate appliances based on the detected presence and position of people in a room.
+## 📌 Problem Statement
 
----
+Energy wastage is a common problem in households and offices, primarily caused by unattended appliances running in unoccupied rooms. Manual appliance control is inconvenient and often neglected, and the absence of real-time monitoring leads to inefficiencies. This results in higher electricity bills and environmental harm.
 
-## Overview
-
-Using a webcam and the YOLOv3 object detection model, the system detects humans in a live video stream. Based on the detected position, it identifies the nearest corner zone in the room and activates a corresponding Arduino-controlled output (like a relay or LED).
+> 💡 **Key Insight**: Current systems lack automation and real-time feedback, making energy usage inefficient and unsustainable.
 
 ---
 
-## How It Works
+## 🚀 Proposed Solution
 
-1. **YOLOv3** processes the webcam feed to detect people.
-2. For each detected person, the bottom-center of the bounding box is computed.
-3. This point is compared against 4 predefined room corner coordinates.
-4. The closest corner point is determined using Euclidean distance.
-5. Each point is linked to a digital pin on an **Arduino** via **pyFirmata**.
-6. The Arduino pin corresponding to the nearest corner point is activated, while others are turned off.
+We present a **Automated Power Monitoring System** that automates appliance control using real-time computer vision and IoT hardware. The system utilizes **YOLOv3** for detecting the presence of people and automatically turns on/off appliances (lights, fans, etc.) via an **Arduino**.
+
+### ✅ Key Features
+
+- 👁️‍🗨️ Real-time automated monitoring with a webcam
+- ⚙️ Automatic and Manual operation modes
+- 🧠 YOLOv3-based people detection
+- 🔌 Appliance control via Arduino and relays
+- 📊 Electricity savings and live stats display
+- 🔌 Auto-detects COM ports
+- 🔲 Flexible room area setup using customizable corner points
 
 ---
 
-## Requirements
+## 🧰 Tech Stack
 
-###  Python Libraries
+| Component      | Technology Used      |
+| -------------- | -------------------- |
+| 🧠 AI Model    | YOLOv3 (Real-time Object Detection) |
+| 🎥 Video Processing | OpenCV |
+| 🖥️ GUI         | PyQt (Desktop Interface) |
+| 🤖 Hardware Control | PyFirmata + Arduino UNO + Relays |
+| 💻 Hardware     | Webcam, Arduino, Electrical Relays |
 
-- `opencv-python`
-- `numpy`
-- `pyfirmata`
+---
 
-Install using:
+## ⚡ Impact & Benefits
 
-```bash
-pip install opencv-python numpy pyfirmata
+### 🌍 Environmental Impact
+
+- Reduces unnecessary energy usage
+- Contributes to SDG 7 (Affordable and Clean Energy)
+
+### 💸 Economic Impact
+
+- Cuts down electricity bills
+- Supports SDG 12 (Responsible Consumption and Production)
+
+### 🧑‍🤝‍🧑 Social Benefits
+
+- Increases user convenience
+- Promotes automation in everyday life
+- Supports SDG 9 (Industry, Innovation, and Infrastructure)
+
+### 📈 Scalability
+
+- Adaptable to homes, offices, schools, and commercial spaces
+
+---
+
+## 🔮 Future Enhancements
+
+- ☁️ Cloud-based data monitoring and analytics
+- 📱 Mobile app support for remote control
+- 🌡️ Sensor integration (temperature, humidity)
+- 🧠 Improved AI models for better accuracy
+
+---
+
+## 🧪 How It Works
+
+1. Webcam captures live feed
+2. YOLOv3 processes frames to detect humans
+3. PyQt GUI shows real-time stats and modes
+4. Arduino receives signals via PyFirmata
+5. Appliances are automatically controlled based on occupancy
+
+---
+
+
+![img.png](img.png)
+
+
+## 📁 Project Structure
+
+```
+smart-room-monitoring/
+├──                  
+├──                  
+├──               
+├── 
+├── 
+└── README.md
 ```
 
-###  Files Needed
+---
 
-- `yolov3.cfg`
-- `yolov3.weights`
-- COCO class labels (optional but helpful)
+## 🎯 Conclusion
+
+The Smart Room Monitoring System showcases how the integration of AI and IoT can solve real-world challenges. It brings sustainability, efficiency, and innovation together — one smart room at a time.
+
+> 🌱 **Join us in building smarter, greener spaces.**
 
 ---
 
-##  Hardware Setup
+## 🤝 Team - Backend Battalion
 
-- **Webcam** (for video feed)
-- **Arduino UNO** (connected to PC via USB)
-- **Digital output devices** like LEDs or relays connected to pins D13, D12, D11, and D10
-
->  Make sure to replace `'COM4'` in the script with your actual Arduino COM port.
-
----
-
-## Arduino Pin Mapping
-
-| Corner Point | Arduino Digital Pin |
-|--------------|---------------------|
-| Point 1      | D13                 |
-| Point 2      | D12                 |
-| Point 3      | D11                 |
-| Point 4      | D10                 |
-
----
-
-##  Functionality Breakdown
-
-- **Video Capture**: `cv2.VideoCapture(1)`
-- **YOLOv3 Inference**: Run object detection using pre-trained weights
-- **Bounding Box Center**: Used to determine person’s relative position
-- **Corner Proximity**: Calculate nearest corner using `np.linalg.norm()`
-- **Relay Control**: Write to Arduino pins based on detected proximity
-
----
-
-##  Output Display
-
-- Detected people are shown with bounding boxes.
-- Labels display detection confidence and the nearest zone.
-- Nearest room corner is marked with a green circle.
-
----
-
-##  Example Use Cases
-
-- Automating lights or fans based on a person’s location in a room.
-- Smart energy saving systems for homes, offices, or labs.
-- Room-based activity tracking and ambient response.
-
----
-
-##  Live Preview
-
-When the system runs, it will display:
-- A real-time video feed
-- Blue boxes for detected people
-- Nearest corner indicator and confidence scores
-
-Press `ESC` to exit the application.
-
----
-
+- 🧠 Ideation & AI: [Shri Ram Dwivedi]
+- 💡 Hardware & Integration: [Amaya Kumar Sahu]
+- 💻 UI/UX & Software: [Surya Kumar Srivastave & Ananya Shahi]
