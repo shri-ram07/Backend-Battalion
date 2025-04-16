@@ -14,7 +14,7 @@ import time
 # Set Matplotlib to dark background style
 plt.style.use('dark_background')
 
-appliance_states = {
+appliance_states____ = {
     0: {"state": False, "last_toggle_time": time.time(), "on_duration": 0},  # S1
     1: {"state": False, "last_toggle_time": time.time(), "on_duration": 0},  # S2
     2: {"state": False, "last_toggle_time": time.time(), "on_duration": 0},  # S3
@@ -33,15 +33,14 @@ pins = {
 
 # Load YOLOv3 model
 net = cv2.dnn.readNetFromDarknet('yolov3.cfg', 'yolov3.weights')
-net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
-net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
+
 
 cap = cv2.VideoCapture(0)
 
-# Default corner points
+
 DEFAULT_CORNER_POINTS = [(520, 108), (105, 214), (820, 255), (517, 591)]
 
-# Global variables
+
 total_people = 0
 automatic_mode = True
 
@@ -430,14 +429,14 @@ class MainWindow(QMainWindow):
         new_state = 1 if current_state == 0 else 0
         pins[switch_id].write(new_state)
         now = time.time()
-        if appliance_states[switch_id]["state"]:
-            appliance_states[switch_id]["on_duration"] += now - appliance_states[switch_id]["last_toggle_time"]
-        appliance_states[switch_id]["state"] = (new_state == 1)
-        appliance_states[switch_id]["last_toggle_time"] = now
+        if appliance_states____[switch_id]["state"]:
+            appliance_states____[switch_id]["on_duration"] += now - appliance_states____[switch_id]["last_toggle_time"]
+        appliance_states____[switch_id]["state"] = (new_state == 1)
+        appliance_states____[switch_id]["last_toggle_time"] = now
         self.switch_buttons[switch_id].setText(f"Switch {switch_id+1} ({'ON' if new_state else 'OFF'})")
 
     def update_video_feed(self):
-        global total_people, automatic_mode, appliance_states
+        global total_people, automatic_mode, appliance_states____
         success, image = cap.read()
         if not success:
             return
@@ -494,15 +493,15 @@ class MainWindow(QMainWindow):
         if automatic_mode:
             for i in range(4):
                 if i in nearest_points:
-                    new_state = 0  # ON when person is near
+                    new_state = 0
                 else:
-                    new_state = 1  # OFF after delay
+                    new_state = 1
                 pins[i].write(new_state)
                 now = time.time()
-                if appliance_states[i]["state"]:
-                    appliance_states[i]["on_duration"] += now - appliance_states[i]["last_toggle_time"]
-                appliance_states[i]["state"] = (new_state == 1)
-                appliance_states[i]["last_toggle_time"] = now
+                if appliance_states____[i]["state"]:
+                    appliance_states____[i]["on_duration"] += now - appliance_states____[i]["last_toggle_time"]
+                appliance_states____[i]["state"] = (new_state == 1)
+                appliance_states____[i]["last_toggle_time"] = now
 
         h, w, ch = image.shape
         bytes_per_line = ch * w
@@ -510,11 +509,11 @@ class MainWindow(QMainWindow):
         self.video_label.setPixmap(QPixmap.fromImage(qt_image))
 
         elapsed_time = time.time() - self.start_time
-        total_consumed = sum((appliance_states[i]["on_duration"] / 3600) * self.power_per_switch[i] for i in range(4))
-        total_saved = sum((elapsed_time / 3600 - appliance_states[i]["on_duration"] / 3600) * self.power_per_switch[i] for i in range(4))
+        total_consumed = sum((appliance_states____[i]["on_duration"] / 3600) * self.power_per_switch[i] for i in range(4))
+        total_saved = sum((elapsed_time / 3600 - appliance_states____[i]["on_duration"] / 3600) * self.power_per_switch[i] for i in range(4))
         self.stats_label.setText(
             f"Total People: {self.total_people}\n"
             f"Electricity Consumed: {round(total_consumed, 2)} kWh\n"
             f"Electricity Saved: {round(total_saved, 2)} kWh\n"
-            f"Total Appliances Active Time: {round(sum(appliance_states[i]['on_duration'] / 3600 for i in range(4)), 2)} hours"
+            f"Total Appliances Active Time: {round(sum(appliance_states____[i]['on_duration'] / 3600 for i in range(4)), 2)} hours"
         )
