@@ -113,8 +113,8 @@ smart-room-monitoring/
 ├── yolov3.cfg                           # YOLOv3 config
 └── yolov3.weights                       # YOLOv3 weights
 
+```
 
----
 
 ## 🧑‍💻 Contributors - Backend Battalion
 
@@ -122,8 +122,7 @@ smart-room-monitoring/
 - ⚡ **Hardware Integration**: Amaya Kumar Sahu  
 - 💻 **UI/UX & Software**: Surya Kumar Srivastave, Ananya Shahi
 
----
+
 
 > 🌱 *Join us in revolutionizing how we consume energy—one smart room at a time.*
 
----

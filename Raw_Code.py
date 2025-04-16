@@ -5,7 +5,7 @@ import sys
 
 
 
-board = Arduino("COM5")  # Update with your Arduino port
+board = Arduino("COM4")  # Update with your Arduino port
 
 # Define the digital pins for each point
 pins = {
